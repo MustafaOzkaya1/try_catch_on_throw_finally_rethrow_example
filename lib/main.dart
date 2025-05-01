@@ -1,9 +1,5 @@
 import 'dart:async';  // Dart'ın Stream ve Future gibi asenkron işlevselliği için gerekli kütüphaneyi içeri aktarıyoruz.
-
-import 'package:flutter/material.dart';  // Flutter widget'ları ve UI bileşenleri için gerekli kütüphaneyi içeri aktarıyoruz.
-
 StreamController _myStreamController = StreamController();  // StreamController nesnesi oluşturuyoruz. Bu, asenkron veri akışını yönetmek için kullanılacak.
-
 void main() {
   try {
     fetchData();  // main fonksiyonu uygulamanın başlangıç noktasıdır ve burada fetchData fonksiyonu çağrılarak veri akışının başlatılması sağlanır.
@@ -17,7 +13,6 @@ void main() {
     print("Code execution completed in every condition");  // Kod her durumda çalışacak bu kısım her zaman çalışır.
   }
 }
-
 class ExceptionA implements Exception {}  // ExceptionA, Exception sınıfından türemiş özel bir hata türüdür.
 class ExceptionB implements Exception {}  // ExceptionB, Exception sınıfından türemiş özel bir hata türüdür.
 
@@ -31,10 +26,8 @@ void functionStreamController() async {
 
   _myStreamController.close();  // Döngü tamamlandığında stream'i kapatıyoruz. Bu, veri akışının sonlanacağı anlamına gelir.
 }
-
 void fetchData() {
   functionStreamController();  // functionStreamController fonksiyonunu çağırarak veri akışını başlatıyoruz.
-
   _myStreamController.stream.listen((event) {
     try {
       if (event > 16) {
